@@ -1,0 +1,48 @@
+<div class="container">
+  
+  <div class="main">
+    <div class="title">
+      <h1>Currency Converter</h1>
+      <h2>Check live foreign currency exchange rates</h2>
+    </div>
+    <div class="main_sub1">
+    <div>
+      <label for="inp" style="font-size: 20px;">Amount</label>
+      <input id="inp"  type="tel" placeholder="₹" (input)="fromval($event)">
+    </div>
+   
+    <div id="sub1">
+      <h2>From</h2>
+      <ng-select id="fromselect"
+      [items]="currencies"
+      bindLabel="name"
+      bindValue="code"
+      [placeholder]="selectedcurrency ? '' : 'Type to Search....'"
+      [(ngModel)]="selectedcurrency"
+      [searchable]="true">
+    </ng-select>
+    </div>
+    <div id="sub2">
+      <h2>To</h2>
+      <ng-select id="fromselect"
+      [items]="currencies"
+      bindLabel="name"
+      bindValue="code"
+      [placeholder]="tocurrency ? '' : 'Type to Search....'"
+      [(ngModel)]="tocurrency"
+      [searchable]="true">
+    </ng-select>
+    </div>
+    </div>
+    <div class="main_sub2">
+      <div id="out">
+        <p>{{fromvale}} {{selectedcurrency}} =  {{toval}}  {{tocurrency}}</p>      
+      </div>
+      <div>
+        <button (click)=" Calculate()">Convert</button>
+        
+      </div>
+
+    </div>
+  </div>
+</div>
